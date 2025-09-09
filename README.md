@@ -1,4 +1,4 @@
-# Finance Tracker - Aplicación de Seguimiento Financiero
+# Money Tracker - Aplicación de Seguimiento Financiero
 
 Una aplicación web completa para registrar y visualizar ingresos y egresos mensuales, desarrollada con Django REST Framework en el backend y React con Bootstrap en el frontend.
 

@@ -3,9 +3,10 @@
 :root {
   --e-global-color-primary: #BAFF39;
   --e-global-color-secondary: #383838;
-  --e-global-color-text: #6E6E6E;
+  --e-global-color-text: #000000;
   --white: #FFFFFF;
-  --card-bg: #A0B2BA;
+  --card-bg: #383838;
+  --cream: #383838;
   --primary-dark: #2c3e50;
   --primary-gray: #95a5a6;
   --success-green: #27ae60;
@@ -362,6 +363,14 @@ code {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
+  color: #FFFFFF;
+}
+
+.card h6,
+.card p,
+.card small,
+.card .text-muted {
+  color: #FFFFFF !important;
 }
 
 
@@ -373,28 +382,28 @@ code {
 }
 
 .card-header h5 {
-  color: #000000 !important;
+  color: #FFFFFF !important;
   font-weight: bold !important;
   margin: 0;
 }
 
 /* Summary Cards */
 .summary-card {
-  background: #A0B2BA !important;
+  background: var(--e-global-color-secondary) !important;
 }
 
 .summary-card.income {
-  background: #A0B2BA !important;
+  background: var(--e-global-color-secondary) !important;
   border-left: 4px solid var(--e-global-color-primary);
 }
 
 .summary-card.expense {
-  background: #A0B2BA !important;
+  background: var(--e-global-color-secondary) !important;
   border-left: 4px solid var(--danger-red);
 }
 
 .summary-card.balance {
-  background: #A0B2BA !important;
+  background: var(--e-global-color-secondary) !important;
   border-left: 4px solid var(--e-global-color-primary);
 }
 
@@ -483,7 +492,7 @@ code {
 }
 
 .form-label {
-  color: #000000 !important;
+  color: #FFFFFF !important;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -553,7 +562,7 @@ code {
 }
 
 .text-primary {
-  color: var(--primary-dark) !important;
+  color: var(--danger-red) !important;
 }
 
 /* Summary Cards */
@@ -646,7 +655,7 @@ code {
 
 .form-label {
   font-weight: 500;
-  color: var(--primary-dark);
+  color: #FFFFFF;
   margin-bottom: 0.5rem;
 }
 

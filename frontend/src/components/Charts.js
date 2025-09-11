@@ -38,12 +38,14 @@ const Charts = ({ monthlyStats, transactions, loading }) => {
   // Monthly Income vs Expenses Chart
   const getMonthlyComparisonData = () => {
     const sortedStats = monthlyStats
-      .sort((a, b) => new Date(a.month) - new Date(b.month))
+      .sort((a, b) => a.month.localeCompare(b.month))
       .slice(-6); // Last 6 months
 
     return {
       labels: sortedStats.map(stat => {
-        const date = new Date(stat.month + '-01');
+        // Parse the month string (YYYY-MM) without timezone issues
+        const [year, month] = stat.month.split('-');
+        const date = new Date(parseInt(year), parseInt(month) - 1, 1);
         return date.toLocaleDateString('es-ES', { month: 'short', year: 'numeric' });
       }),
       datasets: [
@@ -68,12 +70,14 @@ const Charts = ({ monthlyStats, transactions, loading }) => {
   // Net Balance Trend Chart
   const getBalanceTrendData = () => {
     const sortedStats = monthlyStats
-      .sort((a, b) => new Date(a.month) - new Date(b.month))
+      .sort((a, b) => a.month.localeCompare(b.month))
       .slice(-6);
 
     return {
       labels: sortedStats.map(stat => {
-        const date = new Date(stat.month + '-01');
+        // Parse the month string (YYYY-MM) without timezone issues
+        const [year, month] = stat.month.split('-');
+        const date = new Date(parseInt(year), parseInt(month) - 1, 1);
         return date.toLocaleDateString('es-ES', { month: 'short', year: 'numeric' });
       }),
       datasets: [

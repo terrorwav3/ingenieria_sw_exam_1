@@ -30,8 +30,12 @@ const TransactionList = ({ transactions, onTransactionDeleted, loading }) => {
     if (filter.type !== 'all' && transaction.transaction_type !== filter.type) {
       return false;
     }
-    if (filter.month && !transaction.date.startsWith(filter.month)) {
-      return false;
+    if (filter.month) {
+      // Extract year-month from transaction date (YYYY-MM-DD -> YYYY-MM)
+      const transactionYearMonth = transaction.date.substring(0, 7);
+      if (transactionYearMonth !== filter.month) {
+        return false;
+      }
     }
     if (filter.category !== 'all' && transaction.category !== filter.category) {
       return false;
@@ -143,7 +147,12 @@ const TransactionList = ({ transactions, onTransactionDeleted, loading }) => {
                     <h6 className="mb-1">{transaction.title}</h6>
                     <small className="text-muted">
                       {getCategoryLabel(transaction.category)} • {' '}
-                      {format(new Date(transaction.date), 'dd MMM yyyy', { locale: es })}
+                      {(() => {
+                        // Parse date without timezone issues
+                        const [year, month, day] = transaction.date.split('-');
+                        const date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+                        return format(date, 'dd MMM yyyy', { locale: es });
+                      })()}
                     </small>
                     {transaction.description && (
                       <p className="mb-0 mt-1 text-muted small">

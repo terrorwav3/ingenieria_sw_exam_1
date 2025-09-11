@@ -17,7 +17,7 @@ const LandingPage = ({ onStart }) => {
         <span className="money">Money</span>
         <span className="tracker">Tracker</span>
       </div>
-      <p className="landing-subtitle animated-text">
+      <p className="landing-subtitle">
         Controla tus finanzas de manera inteligente
       </p>
       <Button 

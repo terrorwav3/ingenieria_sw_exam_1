@@ -19,13 +19,7 @@ const TransactionForm = ({ onTransactionAdded }) => {
     { value: 'salary', label: 'Salario' },
     { value: 'freelance', label: 'Trabajo Independiente' },
     { value: 'investment', label: 'Inversiones' },
-    { value: 'business', label: 'Negocio' },
-    { value: 'rental', label: 'Alquiler' },
-    { value: 'bonus', label: 'Bonificación' },
-    { value: 'commission', label: 'Comisión' },
-    { value: 'dividend', label: 'Dividendos' },
     { value: 'gift', label: 'Regalo' },
-    { value: 'refund', label: 'Reembolso' },
     { value: 'other_income', label: 'Otros Ingresos' }
   ];
 
@@ -33,19 +27,11 @@ const TransactionForm = ({ onTransactionAdded }) => {
     { value: 'food', label: 'Alimentación' },
     { value: 'transport', label: 'Transporte' },
     { value: 'utilities', label: 'Servicios Públicos' },
-    { value: 'rent', label: 'Arriendo' },
+    { value: 'entertainment', label: 'Entretenimiento' },
     { value: 'healthcare', label: 'Salud' },
     { value: 'education', label: 'Educación' },
-    { value: 'entertainment', label: 'Entretenimiento' },
     { value: 'shopping', label: 'Compras' },
-    { value: 'groceries', label: 'Mercado' },
-    { value: 'clothing', label: 'Ropa' },
-    { value: 'insurance', label: 'Seguros' },
-    { value: 'taxes', label: 'Impuestos' },
-    { value: 'debt', label: 'Deudas' },
-    { value: 'maintenance', label: 'Mantenimiento' },
-    { value: 'subscriptions', label: 'Suscripciones' },
-    { value: 'travel', label: 'Viajes' },
+    { value: 'rent', label: 'Arriendo' },
     { value: 'other_expense', label: 'Otros Gastos' }
   ];
 
